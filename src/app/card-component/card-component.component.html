@@ -1,0 +1,18 @@
+<div class="parent">
+  <div class="card" *ngFor="let item of cardData; let i=index">
+    <div class="image-container">
+      <img [src]="item.links.mission_patch_small" alt="Avatar" class="image">
+    </div>
+    <div class="container">
+      <h3 class="text-color"><b>{{item.mission_name}} #{{item.flight_number}}</b></h3> 
+      <h3><b>Mission Ids</b></h3>
+      <ul >
+          <li class="text-color" *ngFor="let ids of item.mission_id"> {{ids}}</li>
+      </ul>
+      <h3><b>Launch Year: </b> <span class="text-color">{{item.launch_year}}</span></h3>
+      <h3><b>Successful Launch: </b> <span class="text-color">{{item.launch_success}}</span></h3>
+      <h3><b>Successful Landing: </b> <span class="text-color">{{item.launch_landing}}</span></h3>
+    </div>
+  </div>
+</div>
+

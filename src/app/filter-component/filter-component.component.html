@@ -1,0 +1,31 @@
+<div class="card">
+  <h3 style="margin-left: 2%;"><b>Filters:</b></h3>
+  <p style="text-align: center;">Launch Year</p>
+  <div class="line"></div>
+  <div class="parent">
+    <span class="child" *ngFor="let item of launchYear">
+
+      <button class="button-color" [ngStyle]="yearFilter==item?{'background':'#64f235'}:''"(click)="applyYearFil(item)">{{item}}</button>
+    </span>
+
+  </div>
+  <p style="text-align: center;" >Successful Launch</p>
+  <div class="line"></div>
+  <div class="parent">
+    <span class="child" *ngFor="let item of boolArr">
+
+      <button class="button-color" [ngStyle]="launchSuccess==item?{'background':'#64f235'}:''"(click)="applyLaunchSuccessFil(item)">{{item}}</button>
+    </span>
+    
+
+  </div>
+  <p style="text-align: center;">Successful Landing</p>
+  <div class="line"></div>
+  <div class="parent">
+    <span class="child" *ngFor="let item of boolArr" >
+
+      <button class="button-color" [ngStyle]="landSuccess==item?{'background':'#64f235'}:''"(click)="applyLandSuccessFil(item)">{{item}}</button>
+      
+    </span>
+  </div>
+</div>
