@@ -13,11 +13,11 @@ export class CommonServiceService {
     let str=''
     if(launchFilter)
     {
-      str=str+'&launch_success='+launchFilter
+      str=str+'&launch_success='+(launchFilter=='True'?true:false)
     }
     if(landFilter)
     {
-      str=str+'&land_success='+landFilter
+      str=str+'&land_success='+(landFilter=='True'?true:false)
     }
     if(yearFilter)
     {

@@ -21,3 +21,8 @@
       float: none;
     }
   }
+@media screen and (max-width: 1024px) {
+    .float-container {
+      width: 25%;
+    }
+  }
