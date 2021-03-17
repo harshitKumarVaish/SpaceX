@@ -11,19 +11,36 @@ export class CardComponentComponent implements OnInit ,OnChanges {
   constructor(private commonSer:CommonServiceService) { }
   cardData
 
-  @Input() yearFil=null
-  @Input() landFil=null
-  @Input() launchFil=null
+  @Input() yearFil
+  @Input() landFil
+  @Input() launchFil
 
   ngOnInit() {
-    this.getCardData()
+    let yearFil=localStorage.getItem('yearFilter')?localStorage.getItem('yearFilter'):'null'
+    let landFil=localStorage.getItem('landSuccess')?localStorage.getItem('landSuccess'):'null'
+    let launchFil=localStorage.getItem('launchSuccess')?localStorage.getItem('launchSuccess'):'null'
+    if(yearFil=='null')
+    {
+      yearFil=JSON.parse(yearFil)
+    }
+    if(landFil=='null')
+    {
+      landFil=JSON.parse(landFil)
+    }
+    if(launchFil=='null')
+    {
+      launchFil=JSON.parse(launchFil)
+    }
+
+    this.getCardData(yearFil,landFil,launchFil)
+    // this.getCardData()
   }
   ngOnChanges(change:SimpleChanges)
   {
-    if(change.yearFil||change.landFil||change.launchFil)
-    {
-      this.getCardData(this.yearFil,this.landFil,this.launchFil)
-    }
+    // if(change.yearFil||change.landFil||change.launchFil)
+    // {
+    //   this.getCardData(this.yearFil,this.landFil,this.launchFil)
+    // }
   }
   getCardData(yearfil=null,landfil=null,launchfil=null)
   {
